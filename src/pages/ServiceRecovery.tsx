@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Database, AlertTriangle, RefreshCw } from 'lucide-react';
 import Contact from '../components/Contact';
 

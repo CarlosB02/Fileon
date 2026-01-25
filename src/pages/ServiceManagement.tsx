@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Files, FolderGit2, Share2 } from 'lucide-react';
 import Contact from '../components/Contact';
 

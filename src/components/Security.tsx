@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Shield, Lock, Server, FileKey, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 

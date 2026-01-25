@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Scan, FileCheck, Search, ShieldCheck } from 'lucide-react';
+import { useEffect } from 'react';
+import { Scan, FileCheck, ShieldCheck } from 'lucide-react';
 import Contact from '../components/Contact';
 
 const ServiceDigitization = () => {

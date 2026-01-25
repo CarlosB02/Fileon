@@ -1,5 +1,5 @@
-import React from 'react';
-import { Check, TrendingUp, Search, Clock, Shield } from 'lucide-react';
+
+import { Check, TrendingUp, Search, Shield } from 'lucide-react';
 // Remove Marquee import if not available, implementing custom CSS marquee instead
 
 const sectors = [
