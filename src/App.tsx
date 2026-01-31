@@ -15,6 +15,7 @@ import RealCases from './pages/RealCases';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import GDPR from './pages/GDPR';
+import Demonstracao from './pages/Demonstracao';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             <Route path="/privacidade" element={<PrivacyPolicy />} />
             <Route path="/termos" element={<TermsConditions />} />
             <Route path="/rgpd" element={<GDPR />} />
+            <Route path="/demonstracao" element={<Demonstracao />} />
           </Routes>
         </main>
         <Footer />

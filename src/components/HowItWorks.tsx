@@ -18,7 +18,7 @@ const steps = [
     {
         icon: <Lock className="w-10 h-10 text-white" />,
         title: 'Armazenamento',
-        description: 'Guardamos os dados em servidores seguros e o físico em armazém climatizado.',
+        description: 'Guardamos os dados em servidores seguros prontos para consulta.',
         color: 'bg-emerald-600'
     },
     {
@@ -49,7 +49,7 @@ const HowItWorks = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 <div className="text-center mb-12 md:mb-20">
-                    <span className="text-blue-600 font-semibold tracking-wide uppercase">O Processo</span>
+                    <span className="text-blue-600 font-semibold tracking-wide uppercase">Se Precisar, nós tratamos</span>
                     <h2 className="mt-2 text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
                         Simples, Seguro e Eficiente
                     </h2>
