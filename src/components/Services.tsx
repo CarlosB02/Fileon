@@ -65,7 +65,7 @@ const Services = () => {
                     <h2 className="mt-2 text-3xl md:text-4xl font-bold tracking-tight text-slate-900">
                         A Solução Completa para o Seu Arquivo
                     </h2>
-                    <p className="mt-4 max-w-2xl mx-auto text-xl text-slate-600">
+                    <p className="mt-4 max-w-2xl mx-auto text-1xl text-slate-600">
                         Da digitalização ao armazenamento na nuvem, oferecemos tudo o que precisa para modernizar a sua empresa.
                     </p>
                 </div>

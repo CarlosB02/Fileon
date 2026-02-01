@@ -136,10 +136,10 @@ const Navbar = () => {
                             </AnimatePresence>
                         </div>
 
-                        <a href="/#security" className={`text-sm font-medium transition-colors hover:text-blue-600 ${location.pathname !== '/' ? 'text-slate-600' : 'text-slate-600'
+                        <Link to="/demonstracao" className={`text-sm font-medium transition-colors hover:text-blue-600 ${location.pathname !== '/' ? 'text-slate-600' : 'text-slate-600'
                             }`}>
-                            Segurança
-                        </a>
+                            Demonstração
+                        </Link>
 
                         <Link to="/casos-reais" className={`text-sm font-medium transition-colors hover:text-blue-600 ${location.pathname !== '/' ? 'text-slate-600' : 'text-slate-600'
                             }`}>
@@ -234,7 +234,7 @@ const Navbar = () => {
 
                             <div className="space-y-2">
                                 {[
-                                    { name: 'Segurança', href: '/#security', isAnchor: true },
+                                    { name: 'Demonstração', href: '/demonstracao', isAnchor: false },
                                     { name: 'Casos Reais', href: '/casos-reais', isAnchor: false },
                                     { name: 'Sobre Nós', href: '/about', isAnchor: false },
                                     { name: 'Contactos', href: '/contactos', isAnchor: false }

@@ -12,25 +12,25 @@ import cardBg from '../assets/card_bg_pattern.png'; // Verify if this path is co
 
 const benefits = [
     {
-        title: "Redução de Custos",
-        description: "Elimine custos com espaço físico, impressões e gestão manual de arquivo.",
+        title: "Aumento de Produtividade",
+        description: "Elimine custos e aumente a produtividade com espaço físico, e gestão manual.",
         icon: <TrendingUp className="w-6 h-6 text-green-500" />,
-        stat: "-40%",
-        statDesc: "em custos operacionais"
+        stat: "+40%",
+        statDesc: "em produtividade"
     },
     {
         title: "Pesquisa Instantânea",
-        description: "Encontre qualquer documento em segundos com pesquisa por palavras-chave (OCR).",
+        description: "Encontre qualquer documento em segundos com pesquisa por palavras-chave.",
         icon: <Search className="w-6 h-6 text-blue-500" />,
-        stat: "3s",
+        stat: ">1s",
         statDesc: "tempo médio de busca"
     },
     {
         title: "Segurança Total",
-        description: "Acabe com o risco de perda por incêndio, inundação ou extravio.",
+        description: "Acabe com o risco de perda por incêndio, inundação ou outros imprevistos.",
         icon: <Shield className="w-6 h-6 text-purple-500" />,
-        stat: "0%",
-        statDesc: "risco de perda física"
+        stat: "100%",
+        statDesc: "segurança dos documentos"
     }
 ];
 
@@ -43,10 +43,10 @@ const SectorsAndBenefits = () => {
                 <p className="text-center text-slate-500 text-sm font-semibold uppercase tracking-wider mb-8">
                     Soluções aplicáveis a todos os setores
                 </p>
-                <div className="relative flex overflow-x-hidden">
-                    <div className="py-2 animate-marquee whitespace-nowrap flex space-x-12 px-4">
+                <div className="relative flex overflow-x-hidden group">
+                    <div className="py-2 animate-marquee whitespace-nowrap flex space-x-12 px-4 min-w-full shrink-0 items-center">
                         {sectors.map((sector, i) => (
-                            <span key={i} className={`text-2xl font-bold mx-12 ${[
+                            <span key={i} className={`text-2xl font-bold ${[
                                 'text-blue-300', 'text-emerald-300',
                                 'text-purple-300', 'text-amber-300',
                                 'text-cyan-300', 'text-rose-300'
@@ -54,7 +54,17 @@ const SectorsAndBenefits = () => {
                                 }`}>{sector}</span>
                         ))}
                         {sectors.map((sector, i) => (
-                            <span key={`dup-${i}`} className={`text-2xl font-bold mx-12 ${[
+                            <span key={`dup-${i}`} className={`text-2xl font-bold ${[
+                                'text-blue-300', 'text-emerald-300',
+                                'text-purple-300', 'text-amber-300',
+                                'text-cyan-300', 'text-rose-300'
+                            ][i % 6]
+                                }`}>{sector}</span>
+                        ))}
+                    </div>
+                    <div className="py-2 animate-marquee whitespace-nowrap flex space-x-12 px-4 min-w-full shrink-0 items-center absolute top-0 left-0 ml-0 slide-continuation">
+                        {sectors.map((sector, i) => (
+                            <span key={`cont-${i}`} className={`text-2xl font-bold ${[
                                 'text-blue-300', 'text-emerald-300',
                                 'text-purple-300', 'text-amber-300',
                                 'text-cyan-300', 'text-rose-300'
@@ -62,7 +72,7 @@ const SectorsAndBenefits = () => {
                                 }`}>{sector}</span>
                         ))}
                         {sectors.map((sector, i) => (
-                            <span key={`dup2-${i}`} className={`text-2xl font-bold mx-12 ${[
+                            <span key={`cont-dup-${i}`} className={`text-2xl font-bold ${[
                                 'text-blue-300', 'text-emerald-300',
                                 'text-purple-300', 'text-amber-300',
                                 'text-cyan-300', 'text-rose-300'

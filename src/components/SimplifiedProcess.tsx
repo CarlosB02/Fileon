@@ -26,7 +26,7 @@ const SimplifiedProcess = () => {
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
                 <div className="text-center">
                     <span className="text-blue-600 font-semibold tracking-wide uppercase">Como Funciona</span>
-                    <h3 className="mt-2 text-3xl font-bold text-slate-900">Processo Simplificado</h3>
+                    <h3 className="mt-2 text-4xl font-bold text-slate-900">Processo Simplificado</h3>
                 </div>
 
                 {/* Custom Tabs */}
@@ -93,7 +93,7 @@ const RegistoContent = () => (
             <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
                 Registo Instantâneo
             </h3>
-            <p className="text-base md:text-lg text-slate-600 mb-8 leading-relaxed">
+            <p className="text-base text-slate-600 mb-8 leading-relaxed">
                 Basta tirar uma foto à sua fatura ou documento com a nossa app. O sistema identifica automaticamente as bordas e melhora a qualidade da imagem para processamento.
             </p>
             <ul className="space-y-3 md:space-y-4">
@@ -118,19 +118,7 @@ const RegistoContent = () => (
 const LeituraContent = () => (
     <div className="grid md:grid-cols-2 h-full">
         <div className="bg-slate-900 p-8 md:p-12 flex items-center justify-center overflow-hidden relative min-h-[400px]">
-            {/* Animated Code Overlay */}
-            <div className="absolute inset-0 opacity-20 font-mono text-xs text-green-400 p-4 overflow-hidden pointer-events-none">
-                {Array.from({ length: 20 }).map((_, i) => (
-                    <motion.div
-                        key={i}
-                        initial={{ x: -100, opacity: 0 }}
-                        animate={{ x: 0, opacity: 1 }}
-                        transition={{ delay: i * 0.1, duration: 2, repeat: Infinity, repeatType: 'reverse' }}
-                    >
-                        {`{ "id": "${Math.random().toString(36).substr(2, 9)}", "date": "2024-01-22", "amount": ${Math.floor(Math.random() * 1000)} }`}
-                    </motion.div>
-                ))}
-            </div>
+
 
             {/* Scanning Effect */}
             <motion.div
@@ -163,7 +151,7 @@ const LeituraContent = () => (
             <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
                 Leitura Automática
             </h3>
-            <p className="text-base md:text-lg text-slate-600 mb-8 leading-relaxed">
+            <p className="text-base text-slate-600 mb-8 leading-relaxed">
                 O nosso OCR lê e interpreta o conteúdo dos documentos em segundos. Extrai dados como NIF, data, valor total e descrição, transformando imagem em dados estruturados.
             </p>
             <ul className="space-y-3 md:space-y-4">
@@ -239,7 +227,7 @@ const AnaliseContent = () => (
             <h3 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
                 Análise e Controlo
             </h3>
-            <p className="text-base md:text-lg text-slate-600 mb-8 leading-relaxed">
+            <p className="text-base text-slate-600 mb-8 leading-relaxed">
                 Transforme documentos em inteligência de negócio. Acompanhe despesas, detete anomalias e gera relatórios financeiros detalhados automaticamente.
             </p>
             <ul className="space-y-3 md:space-y-4">

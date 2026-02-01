@@ -49,8 +49,8 @@ const IndexingDemo = () => {
 
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="text-center mb-8">
-                    <span className="text-blue-600 font-semibold tracking-wide uppercase text-xs">Organização Inteligente</span>
-                    <h2 className="mt-2 text-2xl md:text-3xl font-bold tracking-tight text-slate-900 mb-2">
+                    <span className="text-blue-600 font-semibold tracking-wide uppercase">Organização Inteligente</span>
+                    <h2 className="mt-2 text-2xl md:text-4xl font-bold tracking-tight text-slate-900 mb-2">
                         Encontre qualquer documento em segundos
                     </h2>
                     <p className="text-base text-slate-600 max-w-2xl mx-auto">
@@ -73,14 +73,14 @@ const IndexingDemo = () => {
                                 <h4 className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-2 flex items-center">
                                     <Calendar className="w-3 h-3 mr-1.5" /> Data
                                 </h4>
-                                <div className="space-y-1">
+                                <div className="flex flex-wrap gap-2 md:block md:space-y-1">
                                     {filters.dates.map(date => (
                                         <button
                                             key={date}
                                             onClick={() => handleFilterChange('date', date)}
-                                            className={`w-full text-left px-2 py-1.5 rounded-md text-xs transition-all duration-200 flex items-center justify-between ${activeFilters.date === date
-                                                    ? 'bg-blue-50 text-blue-700 font-medium ring-1 ring-blue-200'
-                                                    : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                                            className={`w-auto md:w-full text-left px-2 py-1.5 rounded-md text-xs transition-all duration-200 flex items-center justify-between ${activeFilters.date === date
+                                                ? 'bg-blue-50 text-blue-700 font-medium ring-1 ring-blue-200'
+                                                : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                                                 }`}
                                         >
                                             <span>{date}</span>
@@ -95,14 +95,14 @@ const IndexingDemo = () => {
                                 <h4 className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-2 flex items-center">
                                     <Building className="w-3 h-3 mr-1.5" /> Empresa
                                 </h4>
-                                <div className="space-y-1">
+                                <div className="flex flex-wrap gap-2 md:block md:space-y-1">
                                     {filters.companies.map(company => (
                                         <button
                                             key={company}
                                             onClick={() => handleFilterChange('company', company)}
-                                            className={`w-full text-left px-2 py-1.5 rounded-md text-xs transition-all duration-200 flex items-center justify-between ${activeFilters.company === company
-                                                    ? 'bg-indigo-50 text-indigo-700 font-medium ring-1 ring-indigo-200'
-                                                    : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                                            className={`w-auto md:w-full text-left px-2 py-1.5 rounded-md text-xs transition-all duration-200 flex items-center justify-between ${activeFilters.company === company
+                                                ? 'bg-indigo-50 text-indigo-700 font-medium ring-1 ring-indigo-200'
+                                                : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                                                 }`}
                                         >
                                             <span>{company}</span>
@@ -117,14 +117,14 @@ const IndexingDemo = () => {
                                 <h4 className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-2 flex items-center">
                                     <MapPin className="w-3 h-3 mr-1.5" /> Localização
                                 </h4>
-                                <div className="space-y-1">
+                                <div className="flex flex-wrap gap-2 md:block md:space-y-1">
                                     {filters.locations.map(location => (
                                         <button
                                             key={location}
                                             onClick={() => handleFilterChange('location', location)}
-                                            className={`w-full text-left px-2 py-1.5 rounded-md text-xs transition-all duration-200 flex items-center justify-between ${activeFilters.location === location
-                                                    ? 'bg-emerald-50 text-emerald-700 font-medium ring-1 ring-emerald-200'
-                                                    : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
+                                            className={`w-auto md:w-full text-left px-2 py-1.5 rounded-md text-xs transition-all duration-200 flex items-center justify-between ${activeFilters.location === location
+                                                ? 'bg-emerald-50 text-emerald-700 font-medium ring-1 ring-emerald-200'
+                                                : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                                                 }`}
                                         >
                                             <span>{location}</span>

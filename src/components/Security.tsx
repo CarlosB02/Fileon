@@ -1,10 +1,11 @@
 
 import { Shield, Lock, Server, FileKey, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import securityShield from '../assets/security-shield.png';
 
 const Security = () => {
     return (
-        <section id="security" className="py-24 bg-slate-900 text-white relative overflow-hidden">
+        <section id="security" className="py-10 bg-slate-900 text-white relative overflow-hidden flex items-center">
             {/* Background patterns */}
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-pulse"></div>
@@ -63,25 +64,12 @@ const Security = () => {
                             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
                             {/* Security Shield Visualization */}
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="relative">
-                                    <div className="w-64 h-64 border-2 border-slate-600 rounded-full flex items-center justify-center animate-[spin_10s_linear_infinite]">
-                                        <div className="w-3 h-3 bg-blue-500 rounded-full absolute -top-1.5 left-1/2 -translate-x-1/2 shadow-[0_0_20px_rgba(59,130,246,1)]"></div>
-                                    </div>
-                                    <div className="w-48 h-48 border-2 border-slate-600 rounded-full flex items-center justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-[spin_15s_linear_infinite_reverse]">
-                                        <div className="w-3 h-3 bg-emerald-500 rounded-full absolute -top-1.5 left-1/2 -translate-x-1/2 shadow-[0_0_20px_rgba(16,185,129,1)]"></div>
-                                    </div>
-
-                                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                                        <Shield className="w-20 h-20 text-white" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Status badges */}
-                            <div className="absolute bottom-8 left-8 right-8 flex justify-between text-xs font-mono text-slate-400">
-                                <span>STATUS: SECURE</span>
-                                <span className="text-emerald-400">System Functional</span>
+                            <div className="absolute inset-0 flex items-center justify-center p-8">
+                                <img
+                                    src={securityShield}
+                                    alt="Security Shield"
+                                    className="w-full h-full object-contain filter drop-shadow-[0_0_30px_rgba(59,130,246,0.3)]"
+                                />
                             </div>
                         </div>
                     </motion.div>

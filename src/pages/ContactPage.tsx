@@ -51,7 +51,7 @@ const ContactPage = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 relative z-10">
 
                 {/* Header Section */}
-                <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
+                <div className="text-center max-w-2xl mx-auto mb-8 md:mb-12">
                     <motion.span
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -63,7 +63,7 @@ const ContactPage = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-6xl font-bold text-slate-900 mb-6 tracking-tight"
+                        className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight"
                     >
                         Vamos Digitalizar o <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Seu Futuro?</span>
                     </motion.h1>
@@ -71,14 +71,14 @@ const ContactPage = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
-                        className="text-lg text-slate-600 leading-relaxed"
+                        className="text-base text-slate-600 leading-relaxed"
                     >
                         Precisa de recuperar espaço, organizar documentos ou garantir conformidade legal?
                         Estamos aqui para ajudar a sua empresa a dar o próximo passo.
                     </motion.p>
                 </div>
 
-                <div className="grid lg:grid-cols-12 gap-12 items-start">
+                <div className="grid lg:grid-cols-12 gap-6 items-start">
 
                     {/* Contact Information */}
                     <motion.div
@@ -88,17 +88,17 @@ const ContactPage = () => {
                         className="lg:col-span-5 space-y-8"
                     >
                         {/* Info Cards */}
-                        <div className="bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 hover:shadow-2xl transition-all duration-300 group">
+                        <div className="bg-white p-5 rounded-2xl shadow-xl shadow-slate-200/50 border border-slate-100 hover:shadow-2xl transition-all duration-300 group">
                             <div className="flex items-start space-x-6">
-                                <div className="bg-blue-50 p-4 rounded-2xl group-hover:bg-blue-600 transition-colors duration-300">
+                                <div className="bg-blue-50 p-2.5 rounded-2xl group-hover:bg-blue-600 transition-colors duration-300">
                                     <Phone className="w-8 h-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold text-slate-900 mb-2">Ligue-nos</h3>
-                                    <p className="text-slate-500 mb-4 text-sm leading-relaxed">
+                                    <p className="text-slate-500 mb-3 text-sm leading-relaxed">
                                         Segunda a Sexta, das 9h às 18h.<br />Fale diretamente com a nossa equipa.
                                     </p>
-                                    <a href="tel:+351210000000" className="text-blue-600 font-bold hover:text-blue-800 transition-colors text-lg">
+                                    <a href="tel:+351210000000" className="text-blue-600 font-bold hover:text-blue-800 transition-colors text-base">
                                         +351 210 000 000
                                     </a>
                                 </div>
@@ -107,30 +107,30 @@ const ContactPage = () => {
 
                         <div className="bg-white p-8 rounded-3xl shadow-xl shadow-slate-200/50 border border-slate-100 hover:shadow-2xl transition-all duration-300 group">
                             <div className="flex items-start space-x-6">
-                                <div className="bg-indigo-50 p-4 rounded-2xl group-hover:bg-indigo-600 transition-colors duration-300">
+                                <div className="bg-indigo-50 p-2.5 rounded-2xl group-hover:bg-indigo-600 transition-colors duration-300">
                                     <Mail className="w-8 h-8 text-indigo-600 group-hover:text-white transition-colors duration-300" />
                                 </div>
                                 <div>
                                     <h3 className="text-xl font-bold text-slate-900 mb-2">Email</h3>
-                                    <p className="text-slate-500 mb-4 text-sm leading-relaxed">
+                                    <p className="text-slate-500 mb-3 text-sm leading-relaxed">
                                         Envie-nos os detalhes do seu projeto.<br />Respondemos em menos de 24h.
                                     </p>
-                                    <a href="mailto:ola@fileon.pt" className="text-indigo-600 font-bold hover:text-indigo-800 transition-colors text-lg">
+                                    <a href="mailto:ola@fileon.pt" className="text-indigo-600 font-bold hover:text-indigo-800 transition-colors text-base">
                                         ola@fileon.pt
                                     </a>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="bg-gradient-to-br from-green-500 to-emerald-600 p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 text-white relative overflow-hidden group cursor-pointer">
+                        <div className="bg-gradient-to-br from-green-500 to-emerald-600 p-5 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 text-white relative overflow-hidden group cursor-pointer">
                             <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                                <MessageCircle className="w-32 h-32 transform rotate-12" />
+                                <MessageCircle className="w-20 h-20 transform rotate-12" />
                             </div>
                             <div className="relative z-10">
-                                <MessageCircle className="w-10 h-10 mb-6" />
-                                <h3 className="text-2xl font-bold mb-2">WhatsApp</h3>
-                                <p className="text-green-100 mb-6 font-medium">Resposta imediata para questões rápidas.</p>
-                                <button className="bg-white text-green-600 px-6 py-3 rounded-xl font-bold flex items-center space-x-2 hover:bg-green-50 transition-colors">
+                                <MessageCircle className="w-8 h-8 mb-4" />
+                                <h3 className="text-xl font-bold mb-2">WhatsApp</h3>
+                                <p className="text-base text-green-100 mb-4 font-medium">Resposta imediata para questões rápidas.</p>
+                                <button className="bg-white text-green-600 px-4 py-2 rounded-xl font-bold text-base flex items-center space-x-2 hover:bg-green-50 transition-colors">
                                     <span>Iniciar Conversa</span>
                                     <ArrowRight className="w-4 h-4" />
                                 </button>
@@ -146,7 +146,7 @@ const ContactPage = () => {
                         transition={{ delay: 0.4 }}
                         className="lg:col-span-7"
                     >
-                        <div className="bg-white/80 backdrop-blur-xl p-8 md:p-10 rounded-3xl shadow-2xl border border-white/50 relative overflow-hidden">
+                        <div className="bg-white/80 backdrop-blur-xl p-5 md:p-6 rounded-2xl shadow-2xl border border-white/50 relative overflow-hidden">
                             {/* Overlay for success state */}
                             {isSuccess && (
                                 <div className="absolute inset-0 bg-white/95 z-20 flex flex-col items-center justify-center text-center p-8 animate-in fade-in duration-300">
@@ -161,8 +161,8 @@ const ContactPage = () => {
                             )}
 
                             <div className="mb-10">
-                                <h2 className="text-2xl font-bold text-slate-900 mb-2">Envie-nos uma Mensagem</h2>
-                                <p className="text-slate-500">Preencha o formulário abaixo para receber o seu orçamento gratuito.</p>
+                                <h2 className="text-xl font-bold text-slate-900 mb-2">Envie-nos uma Mensagem</h2>
+                                <p className="text-base text-slate-500">Preencha o formulário abaixo para receber o seu orçamento gratuito.</p>
                             </div>
 
                             <form onSubmit={handleSubmit} className="space-y-6">
@@ -176,7 +176,7 @@ const ContactPage = () => {
                                             required
                                             value={formState.name}
                                             onChange={handleChange}
-                                            className="w-full px-5 py-4 bg-slate-50/50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all duration-200"
+                                            className="w-full px-3 py-2.5 bg-slate-50/50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all duration-200 text-base"
                                             placeholder="Ex: João Silva"
                                         />
                                     </div>
@@ -188,7 +188,7 @@ const ContactPage = () => {
                                             name="company"
                                             value={formState.company}
                                             onChange={handleChange}
-                                            className="w-full px-5 py-4 bg-slate-50/50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all duration-200"
+                                            className="w-full px-3 py-2.5 bg-slate-50/50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all duration-200 text-base"
                                             placeholder="Ex: Fileon Lda"
                                         />
                                     </div>
@@ -204,7 +204,7 @@ const ContactPage = () => {
                                             required
                                             value={formState.email}
                                             onChange={handleChange}
-                                            className="w-full px-5 py-4 bg-slate-50/50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all duration-200"
+                                            className="w-full px-3 py-2.5 bg-slate-50/50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all duration-200 text-base"
                                             placeholder="nome@empresa.com"
                                         />
                                     </div>
@@ -217,7 +217,7 @@ const ContactPage = () => {
                                             required
                                             value={formState.phone}
                                             onChange={handleChange}
-                                            className="w-full px-5 py-4 bg-slate-50/50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all duration-200"
+                                            className="w-full px-3 py-2.5 bg-slate-50/50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all duration-200 text-base"
                                             placeholder="+351 900 000 000"
                                         />
                                     </div>
@@ -232,7 +232,7 @@ const ContactPage = () => {
                                         rows={4}
                                         value={formState.message}
                                         onChange={handleChange}
-                                        className="w-full px-5 py-4 bg-slate-50/50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all duration-200 resize-none"
+                                        className="w-full px-3 py-2.5 bg-slate-50/50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all duration-200 resize-none text-base"
                                         placeholder="Descreva brevemente o seu projeto ou necessidade..."
                                     ></textarea>
                                 </div>
@@ -240,7 +240,7 @@ const ContactPage = () => {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-5 rounded-xl transform hover:-translate-y-1 active:translate-y-0 transition-all duration-200 shadow-xl hover:shadow-2xl hover:shadow-slate-900/20 flex items-center justify-center space-x-3 disabled:opacity-70 disabled:cursor-not-allowed"
+                                    className="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-base py-2.5 rounded-xl transform hover:-translate-y-1 active:translate-y-0 transition-all duration-200 shadow-xl hover:shadow-2xl hover:shadow-slate-900/20 flex items-center justify-center space-x-3 disabled:opacity-70 disabled:cursor-not-allowed"
                                 >
                                     {isSubmitting ? (
                                         <div className="w-6 h-6 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
@@ -251,9 +251,6 @@ const ContactPage = () => {
                                         </>
                                     )}
                                 </button>
-                                <p className="text-xs text-center text-slate-400 mt-4">
-                                    Seus dados estão seguros e nunca serão partilhados com terceiros.
-                                </p>
                             </form>
                         </div>
                     </motion.div>
