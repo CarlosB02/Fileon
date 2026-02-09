@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, FileText, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
@@ -6,12 +6,7 @@ import { Link, useLocation } from 'react-router-dom';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
-    const [isVisible, setIsVisible] = useState(true);
     const [isScrolled, setIsScrolled] = useState(false);
-
-    // Use refs for scroll tracking to avoid re-renders and closure staleness
-    const lastScrollY = useRef(0);
-    const scrollUpAccumulator = useRef(0);
 
     const location = useLocation();
 
@@ -21,45 +16,22 @@ const Navbar = () => {
         setDropdownOpen(false);
     }, [location]);
 
-    // Handle scroll for smart sticky behavior
+    // Handle scroll for background transparency
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
-            const lastY = lastScrollY.current;
-
             // Update scrolled state for background
             setIsScrolled(currentScrollY > 20);
-
-            if (currentScrollY > lastY) {
-                // Scrolling DOWN
-                scrollUpAccumulator.current = 0; // Reset up accumulator
-
-                if (currentScrollY > 100 && !isOpen) {
-                    setIsVisible(false);
-                }
-            } else if (currentScrollY < lastY) {
-                // Scrolling UP
-                const delta = lastY - currentScrollY;
-                scrollUpAccumulator.current += delta;
-
-                // Only show if we've scrolled up by more than 70px (tuning sensitivity)
-                if (scrollUpAccumulator.current > 70) {
-                    setIsVisible(true);
-                }
-            }
-
-            lastScrollY.current = currentScrollY;
         };
 
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
-    }, [isOpen]);
+    }, []);
 
     // Lock body scroll when menu is open
     useEffect(() => {
         if (isOpen) {
             document.body.style.overflow = 'hidden';
-            setIsVisible(true); // Always show when menu is open
         } else {
             document.body.style.overflow = 'unset';
         }
@@ -71,18 +43,17 @@ const Navbar = () => {
     const services = [
         { name: 'Digitalização', href: '/digitization' },
         { name: 'Recuperação', href: '/recovery' },
-        { name: 'Storage Web', href: '/storage' },
-        { name: 'Gestão Documental', href: '/management' },
+        { name: 'Armazenamento Web', href: '/armazenamento-web' },
+        { name: 'Gestão Documental', href: '/gestao-documental' },
     ];
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isOpen ? '' : `transform ${isVisible ? 'translate-y-0' : '-translate-y-full'}`
-                } ${isOpen
-                    ? 'bg-transparent py-4' // Overlay provides background now that transform is removed
-                    : (location.pathname !== '/' && location.pathname !== '/casos-reais') || isScrolled
-                        ? 'bg-white/90 backdrop-blur-md shadow-lg py-4'
-                        : 'bg-transparent py-4'
+            className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${isOpen
+                ? 'bg-transparent py-4'
+                : isScrolled || (location.pathname !== '/' && location.pathname !== '/casos-reais')
+                    ? 'bg-white/90 backdrop-blur-md shadow-lg py-4'
+                    : 'bg-transparent py-4'
                 }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -136,10 +107,7 @@ const Navbar = () => {
                             </AnimatePresence>
                         </div>
 
-                        <Link to="/demonstracao" className={`text-sm font-medium transition-colors hover:text-blue-600 ${location.pathname !== '/' ? 'text-slate-600' : 'text-slate-600'
-                            }`}>
-                            Demonstração
-                        </Link>
+
 
                         <Link to="/casos-reais" className={`text-sm font-medium transition-colors hover:text-blue-600 ${location.pathname !== '/' ? 'text-slate-600' : 'text-slate-600'
                             }`}>
@@ -234,7 +202,6 @@ const Navbar = () => {
 
                             <div className="space-y-2">
                                 {[
-                                    { name: 'Demonstração', href: '/demonstracao', isAnchor: false },
                                     { name: 'Casos Reais', href: '/casos-reais', isAnchor: false },
                                     { name: 'Sobre Nós', href: '/about', isAnchor: false },
                                     { name: 'Contactos', href: '/contactos', isAnchor: false }

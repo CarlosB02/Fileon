@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import PageTitle from './components/PageTitle';
 
 // Pages
 import Home from './pages/Home';
@@ -15,12 +16,14 @@ import RealCases from './pages/RealCases';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsConditions from './pages/TermsConditions';
 import GDPR from './pages/GDPR';
-import Demonstracao from './pages/Demonstracao';
+import NotFound from './pages/NotFound';
+
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
+      <PageTitle />
       <Navbar />
       <div className="min-h-screen bg-slate-50 selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden flex flex-col">
         <main className="flex-grow">
@@ -29,14 +32,15 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/digitization" element={<ServiceDigitization />} />
             <Route path="/recovery" element={<ServiceRecovery />} />
-            <Route path="/storage" element={<ServiceStorage />} />
-            <Route path="/management" element={<ServiceManagement />} />
+            <Route path="/armazenamento-web" element={<ServiceStorage />} />
+            <Route path="/gestao-documental" element={<ServiceManagement />} />
             <Route path="/contactos" element={<ContactPage />} />
             <Route path="/casos-reais" element={<RealCases />} />
             <Route path="/privacidade" element={<PrivacyPolicy />} />
             <Route path="/termos" element={<TermsConditions />} />
             <Route path="/rgpd" element={<GDPR />} />
-            <Route path="/demonstracao" element={<Demonstracao />} />
+            <Route path="*" element={<NotFound />} />
+
           </Routes>
         </main>
         <Footer />

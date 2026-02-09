@@ -1,5 +1,5 @@
 
-import { Check, TrendingUp, Search, Shield } from 'lucide-react';
+import { TrendingUp, Search, Shield, ArrowRight } from 'lucide-react';
 // Remove Marquee import if not available, implementing custom CSS marquee instead
 
 const sectors = [
@@ -16,30 +16,36 @@ const benefits = [
         description: "Elimine custos e aumente a produtividade com espaço físico, e gestão manual.",
         icon: <TrendingUp className="w-6 h-6 text-green-500" />,
         stat: "+40%",
-        statDesc: "em produtividade"
+        statDesc: "em produtividade",
+        ctaText: "Otimize a sua operação",
+        ctaLink: "#forms"
     },
     {
         title: "Pesquisa Instantânea",
         description: "Encontre qualquer documento em segundos com pesquisa por palavras-chave.",
         icon: <Search className="w-6 h-6 text-blue-500" />,
         stat: ">1s",
-        statDesc: "tempo médio de busca"
+        statDesc: "tempo médio de busca",
+        ctaText: "Experimente a pesquisa",
+        ctaLink: "#indexdemo"
     },
     {
         title: "Segurança Total",
         description: "Acabe com o risco de perda por incêndio, inundação ou outros imprevistos.",
         icon: <Shield className="w-6 h-6 text-purple-500" />,
         stat: "100%",
-        statDesc: "segurança dos documentos"
+        statDesc: "segurança dos documentos",
+        ctaText: "Proteja os seus documentos",
+        ctaLink: "#forms"
     }
 ];
 
 const SectorsAndBenefits = () => {
     return (
-        <section className="pb-20 pt-0 bg-white overflow-hidden">
+        <section className="pb-16 pt-0 bg-white overflow-hidden">
 
             {/* Sectors Marquee */}
-            <div className="mb-24 bg-slate-50 py-10 border-y border-slate-100">
+            <div className="mb-12 bg-slate-50 py-10 border-y border-slate-100">
                 <p className="text-center text-slate-500 text-sm font-semibold uppercase tracking-wider mb-8">
                     Soluções aplicáveis a todos os setores
                 </p>
@@ -62,7 +68,7 @@ const SectorsAndBenefits = () => {
                                 }`}>{sector}</span>
                         ))}
                     </div>
-                    <div className="py-2 animate-marquee whitespace-nowrap flex space-x-12 px-4 min-w-full shrink-0 items-center absolute top-0 left-0 ml-0 slide-continuation">
+                    <div className="py-2 animate-marquee whitespace-nowrap flex space-x-12 px-4 min-w-full shrink-0 items-center">
                         {sectors.map((sector, i) => (
                             <span key={`cont-${i}`} className={`text-2xl font-bold ${[
                                 'text-blue-300', 'text-emerald-300',
@@ -85,7 +91,7 @@ const SectorsAndBenefits = () => {
 
             {/* Benefits Grid */}
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
+                <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold text-slate-900 mb-4">Porquê digitalizar agora?</h2>
                     <p className="text-lg text-slate-600">Resultados reais para o seu negócio.</p>
                 </div>
@@ -106,7 +112,7 @@ const SectorsAndBenefits = () => {
                                 }}
                             />
 
-                            <div className="relative z-10">
+                            <div className="relative z-10 flex flex-col justify-center h-full">
                                 <div className="flex justify-between items-start mb-6">
                                     <div className="p-3 bg-white rounded-lg shadow-sm">
                                         {benefit.icon}
@@ -117,13 +123,17 @@ const SectorsAndBenefits = () => {
                                     </div>
                                 </div>
                                 <h3 className="text-xl font-bold text-slate-900 mb-3">{benefit.title}</h3>
-                                <p className="text-slate-600 mb-6">{benefit.description}</p>
-                                <ul className="space-y-2">
-                                    <li className="flex items-center text-sm text-slate-500">
-                                        <Check className="w-4 h-4 text-green-500 mr-2" />
-                                        Comprovado pelo mercado
-                                    </li>
-                                </ul>
+                                <p className="text-slate-600 mb-6 min-h-[48px]">{benefit.description}</p>
+
+                                <div className="mt-4">
+                                    <a
+                                        href={benefit.ctaLink}
+                                        className="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors group/link"
+                                    >
+                                        {benefit.ctaText}
+                                        <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover/link:translate-x-1" />
+                                    </a>
+                                </div>
 
                             </div>
                         </div>

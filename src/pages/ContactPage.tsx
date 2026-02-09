@@ -12,6 +12,7 @@ const ContactPage = () => {
         name: '',
         email: '',
         phone: '',
+        subject: '',
         message: '',
         company: ''
     });
@@ -29,7 +30,7 @@ const ContactPage = () => {
         // Reset after 3 seconds
         setTimeout(() => {
             setIsSuccess(false);
-            setFormState({ name: '', email: '', phone: '', message: '', company: '' });
+            setFormState({ name: '', email: '', phone: '', subject: '', message: '', company: '' });
         }, 5000);
     };
 
@@ -41,43 +42,17 @@ const ContactPage = () => {
     };
 
     return (
-        <div className="min-h-screen bg-slate-50 relative overflow-hidden pt-20">
-            {/* Background Decoration */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-blue-100/40 rounded-full blur-[100px] -mr-40 -mt-40"></div>
-                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-100/40 rounded-full blur-[80px] -ml-20 -mb-20"></div>
-            </div>
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20 relative z-10">
-
-                {/* Header Section */}
-                <div className="text-center max-w-2xl mx-auto mb-8 md:mb-12">
-                    <motion.span
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="inline-block py-1 px-3 rounded-full bg-blue-100 text-blue-700 text-sm font-semibold mb-6 tracking-wide"
-                    >
-                        CONTACTE-NOS
-                    </motion.span>
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="text-3xl md:text-5xl font-bold text-slate-900 mb-4 tracking-tight"
-                    >
-                        Vamos Digitalizar o <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Seu Futuro?</span>
-                    </motion.h1>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="text-base text-slate-600 leading-relaxed"
-                    >
-                        Precisa de recuperar espaço, organizar documentos ou garantir conformidade legal?
-                        Estamos aqui para ajudar a sua empresa a dar o próximo passo.
-                    </motion.p>
+        <div className="min-h-screen bg-slate-50 relative overflow-hidden pt-32 md:pt-30 pb-12">
+            {/* Hero Section */}
+            <section className="relative z-10">
+                <div className="max-w-7xl mx-auto text-center">
+                    <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-6 text-slate-900">
+                        Apoiamos <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">o Seu Crescimento</span>
+                    </h1>
                 </div>
+            </section>
 
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 relative z-10">
                 <div className="grid lg:grid-cols-12 gap-6 items-start">
 
                     {/* Contact Information */}
@@ -116,7 +91,7 @@ const ContactPage = () => {
                                         Envie-nos os detalhes do seu projeto.<br />Respondemos em menos de 24h.
                                     </p>
                                     <a href="mailto:ola@fileon.pt" className="text-indigo-600 font-bold hover:text-indigo-800 transition-colors text-base">
-                                        ola@fileon.pt
+                                        geral@fileon.pt
                                     </a>
                                 </div>
                             </div>
@@ -161,7 +136,7 @@ const ContactPage = () => {
                             )}
 
                             <div className="mb-10">
-                                <h2 className="text-xl font-bold text-slate-900 mb-2">Envie-nos uma Mensagem</h2>
+                                <h2 className="text-xl font-bold text-slate-900 mb-2">Vamos Digitalizar o <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Seu Futuro?</span></h2>
                                 <p className="text-base text-slate-500">Preencha o formulário abaixo para receber o seu orçamento gratuito.</p>
                             </div>
 
@@ -196,7 +171,7 @@ const ContactPage = () => {
 
                                 <div className="grid md:grid-cols-2 gap-6">
                                     <div className="space-y-2">
-                                        <label htmlFor="email" className="text-sm font-semibold text-slate-700 ml-1">Email Profissional</label>
+                                        <label htmlFor="email" className="text-sm font-semibold text-slate-700 ml-1">Email</label>
                                         <input
                                             type="email"
                                             id="email"
@@ -221,6 +196,20 @@ const ContactPage = () => {
                                             placeholder="+351 900 000 000"
                                         />
                                     </div>
+                                </div>
+
+                                <div className="space-y-2">
+                                    <label htmlFor="subject" className="text-sm font-semibold text-slate-700 ml-1">Assunto</label>
+                                    <input
+                                        type="text"
+                                        id="subject"
+                                        name="subject"
+                                        required
+                                        value={formState.subject}
+                                        onChange={handleChange}
+                                        className="w-full px-3 py-2.5 bg-slate-50/50 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all duration-200 text-base"
+                                        placeholder="Ex: Pedido de Orçamento"
+                                    />
                                 </div>
 
                                 <div className="space-y-2">
@@ -256,7 +245,7 @@ const ContactPage = () => {
                     </motion.div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

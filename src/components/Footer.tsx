@@ -52,13 +52,9 @@ const Footer = () => {
                     <div>
                         <h4 className="text-white font-bold mb-6">Contactos</h4>
                         <ul className="space-y-3 text-sm">
-                            <li className="flex items-start">
-                                <span className="font-semibold text-white min-w-[60px]">Morada:</span>
-                                <span>Av. da República 100,<br />1050-000 Lisboa</span>
-                            </li>
                             <li className="flex items-center">
                                 <span className="font-semibold text-white min-w-[60px]">Email:</span>
-                                <a href="mailto:ola@fileon.pt" className="hover:text-blue-400">exemplo@fileon.pt</a>
+                                <a href="mailto:ola@fileon.pt" className="hover:text-blue-400">geral@fileon.pt</a>
                             </li>
                             <li className="flex items-center">
                                 <span className="font-semibold text-white min-w-[60px]">Telemóvel:</span>

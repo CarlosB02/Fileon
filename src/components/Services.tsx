@@ -1,37 +1,46 @@
-import { ShieldCheck } from 'lucide-react';
+import { ShieldCheck, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Player } from '@lottiefiles/react-lottie-player';
 import SimplifiedProcess from './SimplifiedProcess';
 import { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const services = [
     {
         icon: <Player autoplay loop src="https://lottie.host/e4755c0b-63df-443a-b129-37e3caf07bb7/23hIWnGBAT.json" style={{ height: '64px', width: '64px' }} />,
         title: 'Digitalização de Documentos',
-        description: 'Transformamos os seus ficheiros físicos em digitais com certificação legal.',
+        description: 'Transformamos os seus ficheiros físicos em digitais com rapidez.',
         features: ['Digitalização certificada', 'Indexação e organização', 'OCR para pesquisa por texto', 'Formatos PDF/A'],
-        color: 'bg-blue-50 hover:border-blue-200'
+        color: 'bg-blue-50 hover:border-blue-200',
+        link: '/digitization',
+        ctaText: 'Aumentar produtividade'
     },
     {
         icon: <Player autoplay loop src="https://lottie.host/44f62130-01c5-41af-b6fe-697a9bea594d/koqdsVqZda.json" style={{ height: '64px', width: '64px' }} />,
         title: 'Recuperação de Arquivos',
-        description: 'Restauro e digitalização de documentos antigos ou danificados com máximo cuidado.',
-        features: ['Documentos antigos/danificados', 'Conversão de formatos obsoletos', 'Recuperação estruturada', 'Limpeza digital'],
-        color: 'bg-emerald-50 hover:border-emerald-200'
+        description: 'Digitalização de documentos antigos ou danificados com máximo cuidado.',
+        features: ['Documentos antigos ou danificados', 'Conversão de formatos obsoletos', 'Recuperação estruturada', 'Limpeza digital'],
+        color: 'bg-emerald-50 hover:border-emerald-200',
+        link: '/recovery',
+        ctaText: 'Recuperar Documentos'
     },
     {
         icon: <Player autoplay loop src="https://lottie.host/73a730a4-4d5e-445e-9b0e-1556c985b737/cO8ppopghB.json" style={{ height: '64px', width: '64px' }} />,
         title: 'Armazenamento Web Seguro',
-        description: 'Aceda aos seus documentos 24/7 com total segurança e redundância.',
+        description: 'Aceda aos seus documentos 24/7 com total segurança e controlo.',
         features: ['Acesso 24/7 em nuvem', 'Backups automáticos', 'Controlo de permissões', 'Criptografia ponta-a-ponta'],
-        color: 'bg-indigo-50 hover:border-indigo-200'
+        color: 'bg-indigo-50 hover:border-indigo-200',
+        link: '/armazenamento-web',
+        ctaText: 'Ativar Armazenamento'
     },
     {
         icon: <Player autoplay loop src="https://lottie.host/e8bc6df2-c015-4b2d-90ca-3838724a3a4d/5GUFIVLudR.json" style={{ height: '64px', width: '64px' }} />,
-        title: 'Dashboard OCR Interativo',
-        description: 'Plataforma inteligente para gerir o ciclo de vida dos seus documentos.',
+        title: 'Indexação e Gestão Documental',
+        description: 'Plataforma inteligente para gerir e indexar os seus documentos.',
         features: ['Classificação inteligente', 'Versionamento de ficheiros', 'Histórico de acessos', 'Workflows de aprovação'],
-        color: 'bg-purple-50 hover:border-purple-200'
+        color: 'bg-purple-50 hover:border-purple-200',
+        link: '/gestao-documental',
+        ctaText: 'Otimizar Processos'
     }
 ];
 
@@ -58,7 +67,7 @@ const Services = () => {
     }, []);
 
     return (
-        <section id="services" className="pt-10 pb-0 bg-white">
+        <section id="services" className="pt-16 pb-0 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
                 <div className="text-center mb-16">
                     <span className="text-blue-600 font-semibold tracking-wide uppercase">Nossos Serviços</span>
@@ -90,16 +99,19 @@ const Services = () => {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1, duration: 0.5 }}
-                            className={`flex-none w-[85vw] md:w-auto snap-center rounded-2xl p-8 border border-slate-100 transition-all duration-300 md:hover:shadow-xl md:hover:-translate-y-1 ${service.color}`}
+                            className={`flex-none w-[85vw] md:w-auto snap-center rounded-2xl p-8 border border-slate-100 transition-all duration-300 md:hover:shadow-xl md:hover:-translate-y-1 ${service.color} flex flex-col`}
                         >
-                            <div className="bg-white rounded-xl w-24 h-24 flex items-center justify-center shadow-sm mb-6 p-2">
-                                {service.icon}
+                            <div className="flex flex-row items-center md:block mb-6 md:mb-0">
+                                <div className="bg-white rounded-xl w-24 h-24 flex items-center justify-center shadow-sm mr-4 shrink-0 md:mr-0 md:mb-6 p-2">
+                                    {service.icon}
+                                </div>
+                                <h3 className="text-xl font-bold text-slate-900 mb-0 md:mb-3">{service.title}</h3>
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900 mb-3">{service.title}</h3>
+
                             <p className="text-slate-600 mb-6 leading-relaxed">
                                 {service.description}
                             </p>
-                            <ul className="space-y-3">
+                            <ul className="space-y-3 mb-8 flex-grow">
                                 {service.features.map((feature, idx) => (
                                     <li key={idx} className="flex items-start text-sm text-slate-700">
                                         <ShieldCheck className="w-4 h-4 text-green-500 mr-2 mt-0.5 shrink-0" />
@@ -107,6 +119,14 @@ const Services = () => {
                                     </li>
                                 ))}
                             </ul>
+
+                            <Link
+                                to={service.link}
+                                className="inline-flex items-center justify-center w-full px-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:border-slate-300 transition-all duration-200 group"
+                            >
+                                {service.ctaText}
+                                <ArrowRight className="w-4 h-4 ml-2 text-slate-400 group-hover:text-blue-600 transition-colors" />
+                            </Link>
                         </motion.div>
                     ))}
                 </div>

@@ -43,7 +43,7 @@ const HowItWorks = () => {
     };
 
     return (
-        <section id="how-it-works" className="py-24 bg-slate-50 relative overflow-hidden">
+        <section id="how-it-works" className="py-16 bg-slate-50 relative overflow-hidden">
             {/* Decorative Line - Hidden on Mobile */}
 
 

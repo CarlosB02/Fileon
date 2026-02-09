@@ -12,7 +12,7 @@ const SimplifiedProcess = () => {
     const [activeTab, setActiveTab] = useState('registo');
 
     return (
-        <section className="relative py-8 bg-white overflow-hidden w-full">
+        <section className="relative py-16 bg-white overflow-hidden w-full">
             {/* Geometric Background Pattern - Dots Only */}
             <div className="absolute inset-0 pointer-events-none"
                 style={{
@@ -77,7 +77,7 @@ const SimplifiedProcess = () => {
 
 const RegistoContent = () => (
     <div className="grid md:grid-cols-2 h-full">
-        <div className="relative h-64 md:h-full min-h-[400px]">
+        <div className="relative h-64 md:h-full min-h-[400px] order-2 md:order-1">
             <img
                 src="/src/assets/invoice_capture.png"
                 alt="Registo fácil de documentos"
@@ -85,7 +85,7 @@ const RegistoContent = () => (
             />
             <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-transparent md:bg-gradient-to-l md:from-white/90 md:to-transparent"></div>
         </div>
-        <div className="p-6 md:p-12 flex flex-col justify-center">
+        <div className="p-6 md:p-12 flex flex-col justify-center order-1 md:order-2">
             <div className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800 mb-6 w-fit">
                 <Smartphone className="w-4 h-4 mr-2" />
                 Captura Mobile
@@ -94,13 +94,13 @@ const RegistoContent = () => (
                 Registo Instantâneo
             </h3>
             <p className="text-base text-slate-600 mb-8 leading-relaxed">
-                Basta tirar uma foto à sua fatura ou documento com a nossa app. O sistema identifica automaticamente as bordas e melhora a qualidade da imagem para processamento.
+                Basta tirar uma foto ao documento com a nossa app. O sistema identifica automaticamente as informações relevantes para processamento.
             </p>
             <ul className="space-y-3 md:space-y-4">
                 {[
-                    'Deteção automática de bordas',
-                    'Correção de perspetiva',
-                    'Otimização de imagem',
+                    'Deteção automática de dados',
+                    'Correção de legibilidade',
+                    'Otimização de qualidade',
                     'Upload imediato'
                 ].map((item, i) => (
                     <li key={i} className="flex items-center text-slate-700 text-sm md:text-base">
@@ -117,7 +117,7 @@ const RegistoContent = () => (
 
 const LeituraContent = () => (
     <div className="grid md:grid-cols-2 h-full">
-        <div className="bg-slate-900 p-8 md:p-12 flex items-center justify-center overflow-hidden relative min-h-[400px]">
+        <div className="bg-slate-900 p-8 md:p-12 flex items-center justify-center overflow-hidden relative min-h-[400px] order-2 md:order-1">
 
 
             {/* Scanning Effect */}
@@ -143,7 +143,7 @@ const LeituraContent = () => (
                 />
             </motion.div>
         </div>
-        <div className="p-6 md:p-12 flex flex-col justify-center">
+        <div className="p-6 md:p-12 flex flex-col justify-center order-1 md:order-2">
             <div className="inline-flex items-center rounded-full bg-green-100 px-3 py-1 text-sm font-medium text-green-800 mb-6 w-fit">
                 <Zap className="w-4 h-4 mr-2" />
                 OCR Inteligente
@@ -152,14 +152,14 @@ const LeituraContent = () => (
                 Leitura Automática
             </h3>
             <p className="text-base text-slate-600 mb-8 leading-relaxed">
-                O nosso OCR lê e interpreta o conteúdo dos documentos em segundos. Extrai dados como NIF, data, valor total e descrição, transformando imagem em dados estruturados.
+                O nosso programa lê e interpreta o conteúdo dos documentos em segundos. Extrai dados como NIF, data, valor total e descrição, transformando imagem em dados estruturados.
             </p>
             <ul className="space-y-3 md:space-y-4">
                 {[
                     'Extração de metadados',
                     'Classificação por tipo',
-                    'Validação de NIF e totais',
-                    'Machine Learning adaptativo'
+                    'Validação de campos relevantes',
+                    'Aprendizagem contínua do sistema'
                 ].map((item, i) => (
                     <li key={i} className="flex items-center text-slate-700 text-sm md:text-base">
                         <div className="bg-green-50 rounded-full p-1 mr-3 flex-shrink-0">
@@ -175,11 +175,11 @@ const LeituraContent = () => (
 
 const AnaliseContent = () => (
     <div className="grid md:grid-cols-2 h-full">
-        <div className="bg-slate-50 p-8 md:p-12 flex items-center justify-center relative min-h-[400px]">
+        <div className="bg-slate-50 p-8 md:p-12 flex items-center justify-center relative min-h-[400px] order-2 md:order-1">
             <div className="w-full max-w-sm bg-white rounded-xl shadow-lg p-4 md:p-6 space-y-4 md:space-y-6 scale-90 md:scale-100 origin-center">
                 <div className="flex justify-between items-center mb-2 md:mb-4">
                     <h4 className="font-bold text-slate-700">Faturação Mensal</h4>
-                    <span className="text-xs text-green-600 bg-green-50 px-2 py-1 rounded">+37%</span>
+                    <span className="text-xs text-green-600 bg-green-50 px-2 py-1 rounded">+73%</span>
                 </div>
 
                 {/* Bar Chart Mockup */}
@@ -199,11 +199,11 @@ const AnaliseContent = () => (
                 <div className="grid grid-cols-2 gap-4">
                     <div className="bg-slate-50 p-3 rounded-lg">
                         <div className="text-xs text-slate-500 mb-1">Processados</div>
-                        <div className="text-xl font-bold text-slate-800">1,240</div>
+                        <div className="text-xl font-bold text-slate-800">2,847</div>
                     </div>
                     <div className="bg-slate-50 p-3 rounded-lg">
                         <div className="text-xs text-slate-500 mb-1">Pendentes</div>
-                        <div className="text-xl font-bold text-orange-500">3</div>
+                        <div className="text-xl font-bold text-green-500">0</div>
                     </div>
                 </div>
             </div>
@@ -219,7 +219,7 @@ const AnaliseContent = () => (
                 <span className="text-xs md:text-sm font-medium text-slate-600">Sync Ativo</span>
             </motion.div>
         </div>
-        <div className="p-6 md:p-12 flex flex-col justify-center">
+        <div className="p-6 md:p-12 flex flex-col justify-center order-1 md:order-2">
             <div className="inline-flex items-center rounded-full bg-purple-100 px-3 py-1 text-sm font-medium text-purple-800 mb-6 w-fit">
                 <BarChart3 className="w-4 h-4 mr-2" />
                 Insights em Tempo Real
@@ -228,14 +228,14 @@ const AnaliseContent = () => (
                 Análise e Controlo
             </h3>
             <p className="text-base text-slate-600 mb-8 leading-relaxed">
-                Transforme documentos em inteligência de negócio. Acompanhe despesas, detete anomalias e gera relatórios financeiros detalhados automaticamente.
+                Transforme documentos em suporte à decisão. Centralização e preparação de dados documentais para controlo básico, monitorização e integração com sistemas de gestão.
             </p>
             <ul className="space-y-3 md:space-y-4">
                 {[
-                    'Relatórios automatizados',
-                    'Visualização de cash-flow',
+                    'Estruturação de dados para análise',
+                    'Consolidação de informação',
                     'Alertas de duplicados',
-                    'Exportação para contabilidade'
+                    'Exportação para ferramentas externas'
                 ].map((item, i) => (
                     <li key={i} className="flex items-center text-slate-700 text-sm md:text-base">
                         <div className="bg-purple-50 rounded-full p-1 mr-3 flex-shrink-0">

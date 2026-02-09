@@ -1,30 +1,30 @@
 
-import React, { useEffect, useState, useRef } from 'react';
-import { Database, AlertTriangle, RefreshCw, ArrowRight, Wand2, FileSearch, Sparkles } from 'lucide-react';
-import { motion, useAnimation, useInView } from 'framer-motion';
+import { useEffect, useState, useRef } from 'react';
+import { ArrowDown } from 'lucide-react';
+import { motion, useInView } from 'framer-motion';
 import Contact from '../components/Contact';
-import oldDocImage from '../assets/old_document_texture_1769744612627.png';
+import invoiceImage from '../assets/invoice_capture.png';
+import securityImage from '../assets/security-shield.png';
+import originalDanificadoImage from '../assets/original_danificado.jpeg';
+import upscalerExampleImage from '../assets/fileon_upscaler.png';
 
 // Mock data representing the "Recovered" text
-const recoveredText = `CONTRATO DE SERVIÇOS
+const recoveredText = `REPÚBLICA PORTUGUESA: Ministério do Interior 
+Governo Civil de Lisboa
 
-ENTRE:
-DIGI SOLUTIONS, LDA., adiante designada por "Primeiro Outorgante";
-e
-CLIENTE EXEMPLO, S.A., adiante designada por "Segundo Outorgante".
+N.º 1 BILHETE DE IDENTIDADE
 
-CLÁUSULA 1ª
-(Objeto)
-O presente contrato tem por objeto a prestação de serviços de recuperação e digitalização de arquivos históricos, garantindo a sua preservação futura.
+Nome: Dr. Manuel d'Arriaga
 
-CLÁUSULA 2ª
-(Duração)
-O contrato entra em vigor na data da sua assinatura e tem a duração de 12 (doze) meses, renovável automaticamente.
+Filiação: Sebastião d'Arriaga Brum da Silveira e D. Maria Christina Pardal d'Arriaga
 
-Lisboa, 15 de Outubro de 1923.
+Naturalidade (conc. e freg.): Fayal (Açores)
 
-Assinaturas Legíveis:
-[Recuperado Digitalmente]
+Idade: 73 anos.  Data do nascimento: 8 de Julho de 1840
+
+Estado: casado
+
+Profissão: Presidente da República; advogado
 `;
 
 const ServiceRecovery = () => {
@@ -33,7 +33,7 @@ const ServiceRecovery = () => {
     }, []);
 
     // Animation Controls
-    const scannerRef = useRef(null);
+    const scannerRef = useRef<HTMLDivElement>(null);
     const isInView = useInView(scannerRef, { once: true, margin: "-20%" });
     const [scanProgress, setScanProgress] = useState(0);
 
@@ -57,7 +57,7 @@ const ServiceRecovery = () => {
 
 
     return (
-        <div className="pt-24 min-h-screen bg-slate-50 overflow-hidden">
+        <div className="pt-16 min-h-screen bg-slate-50 overflow-hidden">
             {/* Hero Section */}
             <div className="relative bg-white border-b border-slate-200">
                 <div className="absolute inset-0 bg-emerald-50/50 pointer-events-none"
@@ -69,64 +69,90 @@ const ServiceRecovery = () => {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5 }}
                     >
-                        <span className="inline-block py-1 px-3 rounded-full bg-emerald-100/50 border border-emerald-200 text-emerald-700 text-xs font-semibold tracking-wide uppercase mb-4">
-                            Recuperação Histórica
-                        </span>
-                        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-6 font-serif">
+                        <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-slate-900 mb-6">
                             Restauramos o Passado,<br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">Preservamos o Futuro</span>
                         </h1>
-                        <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-600 leading-relaxed font-light">
+                        <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-600 leading-relaxed font-light mb-12">
                             Não deixe que o tempo apague a sua história. Recuperamos documentos danificados,
                             convertemos suportes obsoletos e salvamos informação crítica.
                         </p>
+
+                        <motion.div
+                            animate={{ y: [0, 10, 0] }}
+                            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                            className="flex justify-center"
+                        >
+                            <ArrowDown className="w-8 h-8 text-emerald-600 opacity-80" />
+                        </motion.div>
                     </motion.div>
                 </div>
             </div>
 
             {/* Interactive Demo Section - The "Showstopper" */}
-            <div className="py-24 bg-slate-900 relative">
+            <div className="py-16 bg-slate-900 relative">
                 <div className="absolute top-0 inset-x-0 h-40 bg-gradient-to-b from-white to-transparent opacity-10"></div>
 
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center mb-16 text-white">
-                        <h2 className="text-3xl font-bold mb-4 flex items-center justify-center gap-2">
-                            <Sparkles className="text-emerald-400" />
-                            Veja a Magia Acontecer
+                        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-4 flex items-center justify-center gap-2">
+                            Veja a <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-500 pb-1">Magia Acontecer</span>
                         </h2>
-                        <p className="text-slate-400 max-w-lg mx-auto">
+                        <p className="text-slate-400 max-w-lg mx-auto mb-8">
                             O nosso algoritmo de restauro digital remove manchas, reconstrói texto e converte
                             documentos ilegíveis em dados estruturados.
                         </p>
+
+                        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                            <button
+                                onClick={() => document.getElementById('contact-wrap')?.scrollIntoView({ behavior: 'smooth' })}
+                                className="px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-all shadow-lg hover:shadow-emerald-500/25"
+                            >
+                                Recuperar os Meus Documentos
+                            </button>
+                            <button
+                                onClick={() => scannerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' })}
+                                className="px-6 py-3 rounded-full border border-slate-600 hover:bg-slate-800 text-slate-300 hover:text-white font-semibold transition-all"
+                            >
+                                Ver Demonstração
+                            </button>
+                        </div>
                     </div>
 
                     {/* Comparison Component */}
                     <div ref={scannerRef} className="relative bg-black rounded-xl p-2 md:p-4 shadow-2xl border border-emerald-500/30 max-w-5xl mx-auto">
                         <div className="grid md:grid-cols-2 gap-4 h-[500px] md:h-[600px] relative overflow-hidden rounded-lg bg-slate-800">
 
-                            {/* Left Side: Old Document */}
-                            <div className="relative h-full overflow-hidden group">
-                                <div className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-red-400 border border-red-500/30">
-                                    ORIGINAL DANIFICADO
+                            {/* Left Side: Two Images Stacked */}
+                            <div className="flex flex-col h-full border-r border-slate-700">
+                                {/* Top Image: Original Damaged */}
+                                <div className="relative h-1/2 overflow-hidden group border-b border-slate-700 bg-slate-900">
+                                    <div className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-red-400 border border-red-500/30">
+                                        ORIGINAL DANIFICADO
+                                    </div>
+                                    <img
+                                        src={originalDanificadoImage}
+                                        alt="Original Danificado"
+                                        className="w-full h-full object-contain opacity-80 group-hover:scale-105 transition-transform duration-700 ease-out"
+                                    />
+                                    <div className="absolute inset-0 bg-sepia mix-blend-overlay opacity-30 pointer-events-none"></div>
                                 </div>
-                                <img
-                                    src={oldDocImage}
-                                    alt="Documento Antigo"
-                                    className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-700 ease-out"
-                                />
-                                {/* Overlay gradient to update visual appeal */}
-                                <div className="absolute inset-0 bg-sepia mix-blend-overlay opacity-30"></div>
+
+                                {/* Bottom Image: Example */}
+                                <div className="relative h-1/2 overflow-hidden group bg-slate-900">
+                                    <div className="absolute top-4 left-4 z-20 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-amber-400 border border-amber-500/30">
+                                        VERSÃO DIGITAL OTIMIZADA
+                                    </div>
+                                    <img
+                                        src={upscalerExampleImage}
+                                        alt="VERSÃO DIGITAL OTIMIZADA"
+                                        className="w-full h-full object-contain opacity-80 group-hover:scale-105 transition-transform duration-700 ease-out"
+                                    />
+                                    <div className="absolute inset-0 bg-sepia mix-blend-overlay opacity-30 pointer-events-none"></div>
+                                </div>
                             </div>
 
-                            {/* Center Scanner Bar (Absolute) */}
-                            <motion.div
-                                className="absolute top-0 bottom-0 w-1 bg-emerald-500 z-30 shadow-[0_0_20px_rgba(16,185,129,0.8)] hidden md:block"
-                                style={{ left: `${scanProgress * 100}%` }}
-                            >
-                                <div className="absolute top-1/2 -translate-y-1/2 -left-3 w-7 h-7 bg-emerald-500 rounded-full flex items-center justify-center shadow-lg text-black">
-                                    <Wand2 className="w-4 h-4 text-white animate-spin-slow" />
-                                </div>
-                            </motion.div>
+
 
 
                             {/* Right Side: Recovered Version */}
@@ -154,102 +180,211 @@ const ServiceRecovery = () => {
                                     </div>
                                 </div>
 
-                                {/* Watermark/Stamp effect */}
-                                <motion.div
-                                    className="absolute bottom-10 right-10 rotate-12 border-4 border-emerald-600 text-emerald-600 font-bold text-xl px-4 py-2 rounded-lg opacity-0"
-                                    animate={{ opacity: scanProgress > 0.9 ? 0.8 : 0, scale: scanProgress > 0.9 ? 1 : 2 }}
-                                    transition={{ type: "spring" }}
-                                >
-                                    RECUPERADO
-                                </motion.div>
+
                             </div>
                         </div>
 
-                        {/* Mobile Scanner Overlay (Horizontal line moving down) */}
-                        <motion.div
-                            className="absolute left-0 right-0 h-1 bg-emerald-500 z-30 shadow-[0_0_15px_rgba(16,185,129,0.8)] md:hidden"
-                            style={{ top: `${scanProgress * 100}%` }}
-                        />
+
                     </div>
 
-                    <div className="mt-8 flex justify-center">
-                        <button
-                            onClick={() => {
-                                setScanProgress(0);
-                                setTimeout(() => setScanProgress(0.01), 100); // Trigger restart
-                            }}
-                            className="text-slate-400 hover:text-emerald-400 text-sm flex items-center gap-2 transition-colors"
-                        >
-                            <RefreshCw className="w-4 h-4" /> Replay Demo
-                        </button>
-                    </div>
+
                 </div>
             </div>
 
-            {/* Services Grid */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-                <div className="grid md:grid-cols-3 gap-8 mb-20">
-                    <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 group">
-                        <div className="w-14 h-14 bg-emerald-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-emerald-100 transition-colors">
-                            <Database className="w-7 h-7 text-emerald-600" />
-                        </div>
-                        <h3 className="text-xl font-bold text-slate-900 mb-4">Mídia Obsoleta</h3>
-                        <p className="text-slate-600 leading-relaxed mb-6">
-                            Recuperamos dados de suportes que o tempo esqueceu. Disquetes, CDs, Cassetes, Microfilmes e fitas magnéticas convertidos para a nuvem.
-                        </p>
-                        <ul className="space-y-2 text-sm text-slate-500">
-                            <li className="flex items-center"><div className="w-1.5 h-1.5 bg-emerald-400 rounded-full mr-2"></div>Floppy Disks & Zips</li>
-                            <li className="flex items-center"><div className="w-1.5 h-1.5 bg-emerald-400 rounded-full mr-2"></div>CDs/DVDs corrompidos</li>
-                            <li className="flex items-center"><div className="w-1.5 h-1.5 bg-emerald-400 rounded-full mr-2"></div>Fitas DAT/LTO</li>
-                        </ul>
-                    </div>
-
-                    <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 group">
-                        <div className="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-100 transition-colors">
-                            <AlertTriangle className="w-7 h-7 text-amber-500" />
-                        </div>
-                        <h3 className="text-xl font-bold text-slate-900 mb-4">Documentos Danificados</h3>
-                        <p className="text-slate-600 leading-relaxed mb-6">
-                            Tratamento especializado de papel deteriorado. Removemos humidade, tratamos fungos e recuperamos texto quase invisível.
-                        </p>
-                        <ul className="space-y-2 text-sm text-slate-500">
-                            <li className="flex items-center"><div className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></div>Danos por água/humidade</li>
-                            <li className="flex items-center"><div className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></div>Papel quebradiço</li>
-                            <li className="flex items-center"><div className="w-1.5 h-1.5 bg-amber-400 rounded-full mr-2"></div>Tinta desvanecida</li>
-                        </ul>
-                    </div>
-
-                    <div className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-slate-100 group">
-                        <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-100 transition-colors">
-                            <FileSearch className="w-7 h-7 text-blue-600" />
-                        </div>
-                        <h3 className="text-xl font-bold text-slate-900 mb-4">Digitalização Forense</h3>
-                        <p className="text-slate-600 leading-relaxed mb-6">
-                            Análise espectral para recuperar informação apagada ou rasurada intencionalmente. Recuperação de metadados digitais.
-                        </p>
-                        <ul className="space-y-2 text-sm text-slate-500">
-                            <li className="flex items-center"><div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></div>Texto rasurado</li>
-                            <li className="flex items-center"><div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></div>Assinaturas duvidosas</li>
-                            <li className="flex items-center"><div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></div>Reconstrução digital</li>
-                        </ul>
-                    </div>
+            {/* Creative Shared Background Section */}
+            <div className="relative isolate overflow-hidden bg-slate-50 pb-24 pt-16">
+                {/* Background Pattern */}
+                <div className="absolute inset-0 -z-10 h-full w-full pointer-events-none">
+                    <div className="absolute top-0 right-0 -mr-40 -mt-20 h-[600px] w-[600px] rounded-full bg-emerald-100/40 blur-3xl opacity-60" />
+                    <div className="absolute bottom-0 left-0 -ml-40 -mb-20 h-[600px] w-[600px] rounded-full bg-blue-100/40 blur-3xl opacity-60" />
+                    <svg
+                        className="absolute inset-0 h-full w-full stroke-slate-200/100 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+                        aria-hidden="true"
+                    >
+                        <defs>
+                            <pattern
+                                id="shared-bg-grid"
+                                width={40}
+                                height={40}
+                                x="50%"
+                                y={-1}
+                                patternUnits="userSpaceOnUse"
+                            >
+                                <path d="M.5 40V.5H40" fill="none" />
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" strokeWidth={0} fill="url(#shared-bg-grid)" />
+                    </svg>
                 </div>
-            </div>
 
-            {/* CTA */}
-            <div className="bg-slate-900 relative isolate overflow-hidden">
-                <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-                    <div className="mx-auto max-w-2xl text-center">
-                        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                            A sua história merece ser salva.
+                {/* Services Grid */}
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 relative z-10">
+                    <div className="text-center mb-16">
+                        <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl mb-4">
+                            Cada projeto é <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-emerald-500">tratado como único</span>
                         </h2>
-                        <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-slate-300">
-                            Não deixe que a degradação física destrua informação vital. Contacte os nossos especialistas em recuperação hoje mesmo.
+                        <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+                            Abordamos cada desafio com soluções personalizadas, garantindo a máxima eficácia e segurança na recuperação do seu património informativo.
                         </p>
-                        <div className="mt-10 flex items-center justify-center gap-x-6">
-                            <button onClick={() => document.getElementById('contact-wrap')?.scrollIntoView({ behavior: 'smooth' })} className="rounded-md bg-emerald-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-emerald-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 transition-all">
-                                Falar com um Especialista
-                            </button>
+                    </div>
+
+                    <div className="grid md:grid-cols-3 gap-8">
+                        {/* Card 1 */}
+                        <div
+                            className="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group flex flex-col min-h-[450px] bg-slate-900 ring-1 ring-white/10 isolate transform-gpu"
+                            style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
+                        >
+                            <div className="absolute inset-0 z-0">
+                                <img
+                                    src={originalDanificadoImage}
+                                    alt="Background"
+                                    className="w-full h-full object-cover opacity-30 group-hover:scale-110 group-hover:opacity-40 transition-all duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/40" />
+                            </div>
+
+                            <div className="relative z-10 p-8 flex flex-col h-full text-white">
+                                <h3 className="text-2xl font-bold mb-6 text-emerald-400 group-hover:text-emerald-300 transition-colors">Tipos de Recuperação</h3>
+                                <ul className="space-y-4 text-slate-300 mb-8 flex-grow">
+                                    <li className="flex items-start">
+                                        <span className="w-2 h-2 mt-2 bg-emerald-500 rounded-full mr-3 shrink-0 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
+                                        <span className="text-lg leading-relaxed">Documentos em papel e manuscritos antigos</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="w-2 h-2 mt-2 bg-emerald-500 rounded-full mr-3 shrink-0 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
+                                        <span className="text-lg leading-relaxed">Arquivos históricos e patrimoniais</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="w-2 h-2 mt-2 bg-emerald-500 rounded-full mr-3 shrink-0 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></span>
+                                        <span className="text-lg leading-relaxed">Arquivos sem estrutura ou catalogação</span>
+                                    </li>
+                                </ul>
+                                <button onClick={() => document.getElementById('contact-wrap')?.scrollIntoView({ behavior: 'smooth' })} className="w-full py-3.5 rounded-full border border-white/20 text-white font-medium hover:bg-emerald-600 hover:border-emerald-600 transition-all duration-300 bg-white/5 backdrop-blur-md">
+                                    Analisar o Seu Caso
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Card 2 */}
+                        <div
+                            className="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group flex flex-col min-h-[450px] bg-slate-900 ring-1 ring-white/10 isolate transform-gpu"
+                            style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
+                        >
+                            <div className="absolute inset-0 z-0">
+                                <img
+                                    src={invoiceImage}
+                                    alt="Background"
+                                    className="w-full h-full object-cover opacity-30 group-hover:scale-110 group-hover:opacity-40 transition-all duration-700 grayscale mix-blend-luminosity"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/40" />
+                            </div>
+
+                            <div className="relative z-10 p-8 flex flex-col h-full text-white">
+                                <h3 className="text-2xl font-bold mb-6 text-amber-400 group-hover:text-amber-300 transition-colors">Processo de Recuperação</h3>
+                                <ul className="space-y-4 text-slate-300 mb-8 flex-grow">
+                                    <li className="flex items-start">
+                                        <span className="w-2 h-2 mt-2 bg-amber-500 rounded-full mr-3 shrink-0 shadow-[0_0_8px_rgba(245,158,11,0.5)]"></span>
+                                        <span className="text-lg leading-relaxed">Análise detalhada e diagnóstico inicial</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="w-2 h-2 mt-2 bg-amber-500 rounded-full mr-3 shrink-0 shadow-[0_0_8px_rgba(245,158,11,0.5)]"></span>
+                                        <span className="text-lg leading-relaxed">Recuperação técnica</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="w-2 h-2 mt-2 bg-amber-500 rounded-full mr-3 shrink-0 shadow-[0_0_8px_rgba(245,158,11,0.5)]"></span>
+                                        <span className="text-lg leading-relaxed">Digitalização de alta precisão</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="w-2 h-2 mt-2 bg-amber-500 rounded-full mr-3 shrink-0 shadow-[0_0_8px_rgba(245,158,11,0.5)]"></span>
+                                        <span className="text-lg leading-relaxed">Organização, indexação e entrega</span>
+                                    </li>
+                                </ul>
+                                <button onClick={() => document.getElementById('contact-wrap')?.scrollIntoView({ behavior: 'smooth' })} className="w-full py-3.5 rounded-full border border-white/20 text-white font-medium hover:bg-amber-600 hover:border-amber-600 transition-all duration-300 bg-white/5 backdrop-blur-md">
+                                    Conhecer o Processo
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* Card 3 */}
+                        <div
+                            className="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 group flex flex-col min-h-[450px] bg-slate-900 ring-1 ring-white/10 isolate transform-gpu"
+                            style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)' }}
+                        >
+                            <div className="absolute inset-0 z-0">
+                                <img
+                                    src={securityImage}
+                                    alt="Background"
+                                    className="w-full h-full object-cover opacity-30 group-hover:scale-110 group-hover:opacity-40 transition-all duration-700"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/90 to-slate-900/40" />
+                            </div>
+
+                            <div className="relative z-10 p-8 flex flex-col h-full text-white">
+                                <h3 className="text-2xl font-bold mb-6 text-blue-400 group-hover:text-blue-300 transition-colors">Segurança e Confidencialidade</h3>
+                                <ul className="space-y-4 text-slate-300 mb-8 flex-grow">
+                                    <li className="flex items-start">
+                                        <span className="w-2 h-2 mt-2 bg-blue-500 rounded-full mr-3 shrink-0 shadow-[0_0_8px_rgba(59,130,246,0.5)]"></span>
+                                        <span className="text-lg leading-relaxed">Manuseamento em ambiente controlado</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="w-2 h-2 mt-2 bg-blue-500 rounded-full mr-3 shrink-0 shadow-[0_0_8px_rgba(59,130,246,0.5)]"></span>
+                                        <span className="text-lg leading-relaxed">Acesso restrito a pessoal autorizado</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="w-2 h-2 mt-2 bg-blue-500 rounded-full mr-3 shrink-0 shadow-[0_0_8px_rgba(59,130,246,0.5)]"></span>
+                                        <span className="text-lg leading-relaxed">Confidencialidade total garantida</span>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="w-2 h-2 mt-2 bg-blue-500 rounded-full mr-3 shrink-0 shadow-[0_0_8px_rgba(59,130,246,0.5)]"></span>
+                                        <span className="text-lg leading-relaxed">Total conformidade com o RGPD</span>
+                                    </li>
+                                </ul>
+                                <button onClick={() => document.getElementById('contact-wrap')?.scrollIntoView({ behavior: 'smooth' })} className="w-full py-3.5 rounded-full border border-white/20 text-white font-medium hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 bg-white/5 backdrop-blur-md">
+                                    Ver Protocolos
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* CTA */}
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <div className="relative isolate overflow-hidden bg-slate-900 rounded-3xl px-6 py-20 sm:px-16 sm:py-24 lg:px-24 shadow-2xl">
+                        {/* Background Elements */}
+                        <div className="absolute top-0 left-0 -translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-emerald-500/20 blur-[100px] rounded-full pointer-events-none"></div>
+                        <div className="absolute bottom-0 right-0 translate-y-1/2 translate-x-1/2 w-96 h-96 bg-blue-500/20 blur-[100px] rounded-full pointer-events-none"></div>
+
+                        <svg
+                            className="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+                            aria-hidden="true"
+                        >
+                            <defs>
+                                <pattern
+                                    id="cta-grid"
+                                    width={200}
+                                    height={200}
+                                    x="50%"
+                                    y={-1}
+                                    patternUnits="userSpaceOnUse"
+                                >
+                                    <path d="M.5 200V.5H200" fill="none" />
+                                </pattern>
+                            </defs>
+                            <rect width="100%" height="100%" strokeWidth={0} fill="url(#cta-grid)" />
+                        </svg>
+
+                        <div className="mx-auto max-w-2xl text-center relative z-10">
+                            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+                                A história merece ser salva.
+                            </h2>
+                            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-slate-300">
+                                Não deixe que a degradação física destrua informação vital. Contacte os nossos especialistas hoje mesmo.
+                            </p>
+                            <div className="mt-10 flex items-center justify-center gap-x-6">
+                                <button onClick={() => document.getElementById('contact-wrap')?.scrollIntoView({ behavior: 'smooth' })} className="rounded-full bg-emerald-600 px-8 py-4 text-lg font-bold text-white shadow-lg hover:bg-emerald-500 hover:scale-105 hover:shadow-emerald-500/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600 transition-all duration-300">
+                                    Falar com um Especialista
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>

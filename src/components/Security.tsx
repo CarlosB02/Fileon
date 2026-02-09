@@ -5,7 +5,7 @@ import securityShield from '../assets/security-shield.png';
 
 const Security = () => {
     return (
-        <section id="security" className="py-10 bg-slate-900 text-white relative overflow-hidden flex items-center">
+        <section id="security" className="py-16 bg-slate-900 text-white relative overflow-hidden flex items-center">
             {/* Background patterns */}
             <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-pulse"></div>

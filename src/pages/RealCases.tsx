@@ -264,8 +264,39 @@ const RealCases = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="py-20 bg-blue-600">
-                <div className="max-w-4xl mx-auto px-4 text-center">
+            <div className="relative bg-blue-600 py-16 overflow-hidden z-20">
+                {/* Creative Background - Data Flow Theme */}
+                <div className="absolute inset-0 pointer-events-none">
+                    <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-soft-light"></div>
+                    <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-300/40 rounded-full blur-3xl"></div>
+                    <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-300/40 rounded-full blur-3xl"></div>
+
+                    {/* Concentric Circles / Radar Effect */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-blue-200/40 rounded-full"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-blue-200/40 rounded-full"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-blue-200/40 rounded-full"></div>
+
+                    {/* Abstract Waveform */}
+                    <svg className="absolute bottom-0 left-0 w-full h-32 text-blue-400/50" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                        <path fill="currentColor" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1440,112L1440,320L1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                    </svg>
+
+
+                </div>
+
+                <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+                    <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl"></div>
+                    <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl"></div>
+
+                    {/* Concentric Circles / Radar Effect */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-blue-400/10 rounded-full"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] border border-blue-400/10 rounded-full"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] border border-blue-400/10 rounded-full"></div>
+
+
+                </div>
+
+                <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
                     <h2 className="text-3xl font-bold text-white mb-6">
                         Tem um desafio semelhante?
                     </h2>
@@ -279,7 +310,7 @@ const RealCases = () => {
                         Fale Connosco
                     </Link>
                 </div>
-            </section>
+            </div>
         </div>
     );
 };

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Counter from './Counter';
-import HeroIllustration from '../assets/hero_illustration.png';
+import HeroImage from '../assets/hero_illustration.png';
 
 const Hero = () => {
     return (
@@ -78,9 +78,9 @@ const Hero = () => {
                     >
                         <div className="relative group perspective-1000">
                             <img
-                                src={HeroIllustration}
+                                src={HeroImage}
                                 alt="Digitalização e Gestão Documental"
-                                className="relative w-full h-auto object-contain transform group-hover:scale-105 transition-transform duration-700 drop-shadow-2xl"
+                                className="relative w-full h-auto object-contain transform group-hover:scale-105 transition-transform duration-700"
                             />
                         </div>
 

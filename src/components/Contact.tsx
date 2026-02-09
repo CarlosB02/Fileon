@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Send, Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MessageCircle, Send } from 'lucide-react';
 
 const Contact = () => {
     const [formState, setFormState] = useState({
         name: '',
         email: '',
         phone: '',
+        subject: '',
         message: ''
     });
 
@@ -24,100 +25,115 @@ const Contact = () => {
     };
 
     return (
-        <section id="contact" className="py-12 bg-slate-50 relative">
-            <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section id="contact" className="py-16 bg-slate-50 relative overflow-hidden">
+            {/* Background Decorations */}
+            {/* Creative Background Elements - Deep Depth */}
+            <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-indigo-400/15 rounded-full blur-[80px] translate-x-1/3 -translate-y-1/3 pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-[700px] h-[700px] bg-cyan-300/15 rounded-full blur-[90px] -translate-x-1/3 translate-y-1/3 pointer-events-none"></div>
+
+            {/* Geometric Shapes & Rings */}
+            <div className="absolute top-40 left-0 w-72 h-72 border-[3px] border-blue-400/40 rounded-full -translate-x-1/2 pointer-events-none"></div>
+            <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] border-[2px] border-indigo-400/30 rounded-full translate-x-1/2 pointer-events-none"></div>
+            <div className="absolute top-20 right-20 w-48 h-48 bg-gradient-to-br from-blue-500/10 to-transparent rounded-full blur-2xl pointer-events-none"></div>
+
+            {/* Floating Accents */}
+            <div className="absolute top-1/4 left-20 w-4 h-4 bg-blue-500/50 rounded-full pointer-events-none"></div>
+            <div className="absolute bottom-1/3 right-32 w-6 h-6 bg-indigo-500/40 rounded-full pointer-events-none"></div>
+            <div className="absolute bottom-20 left-1/3 w-3 h-3 bg-cyan-500/50 rounded-full pointer-events-none"></div>
+            <div className="absolute top-1/2 right-0 w-32 h-64 bg-blue-300/30 rounded-l-full blur-xl translate-x-1/2 pointer-events-none"></div>
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="bg-blue-600 rounded-2xl overflow-hidden shadow-2xl">
-                    <div className="grid lg:grid-cols-5">
+                    <div className="grid lg:grid-cols-5 min-h-[500px]">
 
                         {/* Contact Info & CTA */}
-                        <div className="lg:col-span-2 bg-blue-700 p-8 text-white relative overflow-hidden flex flex-col justify-center">
-                            <div className="relative z-10">
-                                <h3 className="text-2xl font-bold mb-4">Vamos modernizar o seu arquivo?</h3>
-                                <p className="text-blue-100 mb-6 text-base leading-relaxed">
-                                    Fale com um especialista hoje e descubra quanto pode poupar.
-                                </p>
+                        {/* Contact Info & CTA */}
+                        <div className="lg:col-span-2 bg-blue-700 p-8 lg:p-12 text-white relative overflow-hidden flex flex-col h-full">
+                            <div className="relative z-10 flex flex-col h-full gap-8 lg:gap-0">
+                                <div>
+                                    <h3 className="text-3xl font-bold mb-6">Vamos digitalizar o seu futuro?</h3>
+                                    <p className="text-blue-100 text-lg leading-relaxed">
+                                        Fale com um especialista hoje e descubra quanto pode poupar.
+                                    </p>
+                                </div>
 
-                                <div className="space-y-4 mb-8">
-                                    <div className="flex items-center space-x-3">
-                                        <Phone className="w-5 h-5 text-blue-300" />
-                                        <span className="text-sm">+351 210 000 000</span>
+                                <div className="space-y-4 my-auto">
+                                    <div className="flex items-center space-x-4 bg-blue-800/30 p-4 rounded-xl border border-blue-400/20 hover:bg-blue-800/50 transition-colors">
+                                        <Phone className="w-6 h-6 text-blue-300" />
+                                        <span className="text-lg font-medium tracking-wide">+351 210 000 000</span>
                                     </div>
-                                    <div className="flex items-center space-x-3">
-                                        <Mail className="w-5 h-5 text-blue-300" />
-                                        <span className="text-sm">ola@fileon.pt</span>
-                                    </div>
-                                    <div className="flex items-center space-x-3">
-                                        <MapPin className="w-5 h-5 text-blue-300" />
-                                        <span className="text-sm">Lisboa, Portugal</span>
+                                    <div className="flex items-center space-x-4 bg-blue-800/30 p-4 rounded-xl border border-blue-400/20 hover:bg-blue-800/50 transition-colors">
+                                        <Mail className="w-6 h-6 text-blue-300" />
+                                        <span className="text-lg font-medium tracking-wide">geral@fileon.pt</span>
                                     </div>
                                 </div>
 
-                                <div className="mt-auto">
-                                    <p className="text-xs text-blue-300 mb-3 font-semibold uppercase tracking-wider">Prefere falar já?</p>
-                                    <button className="w-full flex items-center justify-center space-x-2 bg-[#25D366] hover:bg-[#128C7E] text-white py-2.5 px-4 rounded-lg font-bold transition-colors shadow-lg text-sm">
-                                        <MessageCircle className="w-5 h-5" />
+                                <div>
+                                    <p className="text-sm text-blue-300 mb-4 font-semibold uppercase tracking-wider">Prefere falar já?</p>
+                                    <button className="w-full flex items-center justify-center space-x-3 bg-[#25D366] hover:bg-[#128C7E] text-white py-4 px-6 rounded-xl font-bold transition-colors shadow-lg text-base">
+                                        <MessageCircle className="w-6 h-6" />
                                         <span>WhatsApp Direto</span>
                                     </button>
                                 </div>
                             </div>
 
-                            {/* Decorative Circles */}
-                            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-60 h-60 bg-blue-600 rounded-full opacity-50 blur-3xl"></div>
-                            <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-60 h-60 bg-blue-800 rounded-full opacity-50 blur-3xl"></div>
+                            {/* Decorative Circles - Original Subtle */}
+                            <div className="absolute top-0 right-0 -mr-24 -mt-24 w-80 h-80 bg-blue-600 rounded-full opacity-50 blur-3xl"></div>
+                            <div className="absolute bottom-0 left-0 -ml-24 -mb-24 w-80 h-80 bg-blue-800 rounded-full opacity-50 blur-3xl"></div>
                         </div>
 
                         {/* Form */}
-                        <div className="lg:col-span-3 bg-white p-8">
-                            <form onSubmit={handleSubmit} className="space-y-4">
-                                <div className="grid md:grid-cols-2 gap-4">
+                        <div className="lg:col-span-3 bg-white p-8 lg:p-12 flex flex-col justify-center relative z-10">
+                            <form id="forms" onSubmit={handleSubmit} className="space-y-6 scroll-mt-32">
+                                <div className="grid md:grid-cols-2 gap-6">
                                     <div>
-                                        <label htmlFor="name" className="block text-xs font-medium text-slate-700 mb-1">Nome Completo</label>
+                                        <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">Nome Completo</label>
                                         <input
                                             type="text"
                                             id="name"
                                             name="name"
                                             value={formState.name}
                                             onChange={handleChange}
-                                            className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
+                                            className="w-full px-4 py-3 text-base rounded-xl border border-slate-300 bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
                                             placeholder="João Silva"
                                             required
                                         />
                                     </div>
                                     <div>
-                                        <label htmlFor="company" className="block text-xs font-medium text-slate-700 mb-1">Empresa</label>
+                                        <label htmlFor="company" className="block text-sm font-medium text-slate-700 mb-2">Empresa</label>
                                         <input
                                             type="text"
                                             id="company"
                                             name="company"
-                                            className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
+                                            className="w-full px-4 py-3 text-base rounded-xl border border-slate-300 bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
                                             placeholder="Fileon Lda."
                                         />
                                     </div>
                                 </div>
 
-                                <div className="grid md:grid-cols-2 gap-4">
+                                <div className="grid md:grid-cols-2 gap-6">
                                     <div>
-                                        <label htmlFor="email" className="block text-xs font-medium text-slate-700 mb-1">Email</label>
+                                        <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-2">Email</label>
                                         <input
                                             type="email"
                                             id="email"
                                             name="email"
                                             value={formState.email}
                                             onChange={handleChange}
-                                            className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
-                                            placeholder="joao@empresa.pt"
+                                            className="w-full px-4 py-3 text-base rounded-xl border border-slate-300 bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
+                                            placeholder="exemplo@empresa.pt"
                                             required
                                         />
                                     </div>
                                     <div>
-                                        <label htmlFor="phone" className="block text-xs font-medium text-slate-700 mb-1">Telefone</label>
+                                        <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-2">Telefone</label>
                                         <input
                                             type="tel"
                                             id="phone"
                                             name="phone"
                                             value={formState.phone}
                                             onChange={handleChange}
-                                            className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
+                                            className="w-full px-4 py-3 text-base rounded-xl border border-slate-300 bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
                                             placeholder="+351 910 000 000"
                                             required
                                         />
@@ -125,27 +141,37 @@ const Contact = () => {
                                 </div>
 
                                 <div>
-                                    <label htmlFor="message" className="block text-xs font-medium text-slate-700 mb-1">Como podemos ajudar?</label>
+                                    <label htmlFor="subject" className="block text-sm font-medium text-slate-700 mb-2">Assunto</label>
+                                    <input
+                                        type="text"
+                                        id="subject"
+                                        name="subject"
+                                        value={formState.subject}
+                                        onChange={handleChange}
+                                        className="w-full px-4 py-3 text-base rounded-xl border border-slate-300 bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
+                                        placeholder="Digitalização de Arquivo"
+                                        required
+                                    />
+                                </div>
+
+                                <div>
+                                    <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-2">Como podemos ajudar?</label>
                                     <textarea
                                         id="message"
                                         name="message"
-                                        rows={3}
+                                        rows={2} // Reduced height
                                         value={formState.message}
                                         onChange={handleChange}
-                                        className="w-full px-3 py-2 text-sm rounded-lg border border-slate-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all resize-none"
+                                        className="w-full px-4 py-3 text-base rounded-xl border border-slate-300 bg-white focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all resize-none"
                                         placeholder="Tenho cerca de 500 dossiers para digitalizar..."
                                         required
                                     ></textarea>
                                 </div>
 
-                                <button type="submit" className="w-full bg-slate-900 text-white font-bold py-3 rounded-lg hover:bg-slate-800 transform hover:-translate-y-1 transition-all shadow-lg flex items-center justify-center space-x-2 text-sm">
-                                    <span>Pedir Orçamento Grátis</span>
-                                    <Send className="w-4 h-4 ml-2" />
+                                <button type="submit" className="w-full bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-slate-800 transform hover:-translate-y-1 transition-all shadow-lg flex items-center justify-center space-x-2 text-base">
+                                    <span>Enviar Mensagem</span>
+                                    <Send className="w-5 h-5 ml-2" />
                                 </button>
-
-                                <p className="text-[10px] text-center text-slate-500 mt-2">
-                                    Ao submeter este formulário concorda com a nossa Política de Privacidade.
-                                </p>
                             </form>
                         </div>
 
