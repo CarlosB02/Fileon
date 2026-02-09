@@ -29,9 +29,9 @@ function App() {
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/digitization" element={<ServiceDigitization />} />
-            <Route path="/recovery" element={<ServiceRecovery />} />
+            <Route path="/sobre-nos" element={<About />} />
+            <Route path="/digitalizacao" element={<ServiceDigitization />} />
+            <Route path="/recuperacao" element={<ServiceRecovery />} />
             <Route path="/armazenamento-web" element={<ServiceStorage />} />
             <Route path="/gestao-documental" element={<ServiceManagement />} />
             <Route path="/contactos" element={<ContactPage />} />

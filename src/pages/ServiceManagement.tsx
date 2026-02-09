@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
     Search,
-    Zap,
     FileText,
     ArrowRight,
     Database,
@@ -13,7 +12,6 @@ import {
     Clock,
     Filter,
     Layers,
-    Share2,
     FileWarning,
     Lock,
     ShieldAlert,

@@ -41,8 +41,8 @@ const Navbar = () => {
     }, [isOpen]);
 
     const services = [
-        { name: 'Digitalização', href: '/digitization' },
-        { name: 'Recuperação', href: '/recovery' },
+        { name: 'Digitalização', href: '/digitalizacao' },
+        { name: 'Recuperação', href: '/recuperacao' },
         { name: 'Armazenamento Web', href: '/armazenamento-web' },
         { name: 'Gestão Documental', href: '/gestao-documental' },
     ];
@@ -114,7 +114,7 @@ const Navbar = () => {
                             Casos Reais
                         </Link>
 
-                        <Link to="/about" className={`text-sm font-medium transition-colors hover:text-blue-600 ${location.pathname !== '/' ? 'text-slate-600' : 'text-slate-600'
+                        <Link to="/sobre-nos" className={`text-sm font-medium transition-colors hover:text-blue-600 ${location.pathname !== '/' ? 'text-slate-600' : 'text-slate-600'
                             }`}>
                             Sobre Nós
                         </Link>
@@ -203,7 +203,7 @@ const Navbar = () => {
                             <div className="space-y-2">
                                 {[
                                     { name: 'Casos Reais', href: '/casos-reais', isAnchor: false },
-                                    { name: 'Sobre Nós', href: '/about', isAnchor: false },
+                                    { name: 'Sobre Nós', href: '/sobre-nos', isAnchor: false },
                                     { name: 'Contactos', href: '/contactos', isAnchor: false }
                                 ].map((item) => (
                                     <motion.div

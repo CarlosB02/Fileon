@@ -9,13 +9,13 @@ const PageTitle = () => {
             case '/':
                 document.title = 'Fileon';
                 break;
-            case '/about':
+            case '/sobre-nos':
                 document.title = 'Fileon - Sobre Nós';
                 break;
-            case '/digitization':
+            case '/digitalizacao':
                 document.title = 'Fileon - Digitalização';
                 break;
-            case '/recovery':
+            case '/recuperacao':
                 document.title = 'Fileon - Recuperação';
                 break;
             case '/armazenamento-web':

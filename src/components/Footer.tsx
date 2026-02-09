@@ -30,10 +30,10 @@ const Footer = () => {
                     <div>
                         <h4 className="text-white font-bold mb-6">Serviços</h4>
                         <ul className="space-y-3 text-sm">
-                            <li><a href="#services" className="hover:text-blue-400 transition-colors">Digitalização de Documentos</a></li>
-                            <li><a href="#services" className="hover:text-blue-400 transition-colors">Recuperação de Arquivos</a></li>
-                            <li><a href="#services" className="hover:text-blue-400 transition-colors">Storage Web Seguro</a></li>
-                            <li><a href="#services" className="hover:text-blue-400 transition-colors">Gestão Documental</a></li>
+                            <li><Link to="/digitalizacao" className="hover:text-blue-400 transition-colors">Digitalização de Documentos</Link></li>
+                            <li><Link to="/recuperacao" className="hover:text-blue-400 transition-colors">Recuperação de Arquivos</Link></li>
+                            <li><Link to="/armazenamento-web" className="hover:text-blue-400 transition-colors">Storage Web Seguro</Link></li>
+                            <li><Link to="/gestao-documental" className="hover:text-blue-400 transition-colors">Gestão Documental</Link></li>
                         </ul>
                     </div>
 
@@ -41,10 +41,10 @@ const Footer = () => {
                     <div>
                         <h4 className="text-white font-bold mb-6">Empresa</h4>
                         <ul className="space-y-3 text-sm">
-                            <li><a href="#about" className="hover:text-blue-400 transition-colors">Sobre Nós</a></li>
+                            <li><Link to="/sobre-nos" className="hover:text-blue-400 transition-colors">Sobre Nós</Link></li>
                             <li><a href="#how-it-works" className="hover:text-blue-400 transition-colors">Como Funciona</a></li>
                             <li><a href="#security" className="hover:text-blue-400 transition-colors">Segurança</a></li>
-                            <li><a href="#contact" className="hover:text-blue-400 transition-colors">Contactos</a></li>
+                            <li><Link to="/contactos" className="hover:text-blue-400 transition-colors">Contactos</Link></li>
                         </ul>
                     </div>
 

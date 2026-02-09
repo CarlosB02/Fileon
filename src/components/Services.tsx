@@ -12,7 +12,7 @@ const services = [
         description: 'Transformamos os seus ficheiros físicos em digitais com rapidez.',
         features: ['Digitalização certificada', 'Indexação e organização', 'OCR para pesquisa por texto', 'Formatos PDF/A'],
         color: 'bg-blue-50 hover:border-blue-200',
-        link: '/digitization',
+        link: '/digitalizacao',
         ctaText: 'Aumentar produtividade'
     },
     {
@@ -21,7 +21,7 @@ const services = [
         description: 'Digitalização de documentos antigos ou danificados com máximo cuidado.',
         features: ['Documentos antigos ou danificados', 'Conversão de formatos obsoletos', 'Recuperação estruturada', 'Limpeza digital'],
         color: 'bg-emerald-50 hover:border-emerald-200',
-        link: '/recovery',
+        link: '/recuperacao',
         ctaText: 'Recuperar Documentos'
     },
     {
