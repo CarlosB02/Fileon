@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, Scan, BarChart3, Smartphone, Zap } from 'lucide-react';
+import invoiceCapture from "@/assets/invoice_capture.png";
 
 
 const tabs = [
@@ -80,7 +81,7 @@ const RegistoContent = () => (
     <div className="grid md:grid-cols-2 h-full">
         <div className="relative h-64 md:h-full min-h-[400px] order-2 md:order-1">
             <img
-                src="/src/assets/invoice_capture.png"
+                src={invoiceCapture}
                 alt="Invoice capture"
                 className="absolute inset-0 w-full h-full object-cover"
             />
